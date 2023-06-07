@@ -9,10 +9,10 @@ zer = "and is 0"
 if number < 0:
     last = -(abs(number) % 10)
 if last > 5:
-    print(f"last digit of {number} is {last} {greater}")
+    print(f"Last digit of {number} is {last} {greater}")
 elif last == 0:
-    print(f"last digit of {number} is {last} {zer}")
+    print(f"Last digit of {number} is {last} {zer}")
 elif last < 6 and last != 0:
-    print(f"last digit of {number} is {last} {lower}")
+    print(f"Last digit of {number} is {last} {lower}")
 else:
-    print(f"last digit of {number} is -{last} {lower}")
+    print(f"Last digit of {number} is -{last} {lower}")
