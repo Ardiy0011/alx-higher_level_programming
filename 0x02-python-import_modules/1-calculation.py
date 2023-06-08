@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from calculator_1 import addin, subin, multin, diving
+    import calculator_1 as calc
+
     a = 10
     b = 5
-    print("{:d} + {:d} = {:d}".format(a, b, addin(a, b)))
-    print("{:d} - {:d} = {:d}".format(a, b, subin(a, b)))
-    print("{:d} * {:d} = {:d}".format(a, b, multin(a, b)))
-    print("{:d} / {:d} = {:d}".format(a, b, int(diving(a, b))),end='')
+
+    print("{} + {} = {}".format(a, b, (calc.add(a, b))))
+    print("{} - {} = {}".format(a, b, (calc.sub(a, b))))
+    print("{} * {} = {}".format(a, b, (calc.mul(a, b))))
+    print("{} / {} = {}".format(a, b, int((calc.div(a, b)))), end ='')

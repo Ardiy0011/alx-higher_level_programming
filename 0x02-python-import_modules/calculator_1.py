@@ -1,20 +1,20 @@
 #!/usr/bin/python3
-def addin(a, b):
+def add(a, b):
 
     return a + b
 
 
-def subin(a, b):
+def sub(a, b):
 
     return a - b
 
 
 
-def multin(a, b):
+def mul(a, b):
 
     return a * b
 
 
-def diving(a, b):
+def div(a, b):
 
     return a / b
