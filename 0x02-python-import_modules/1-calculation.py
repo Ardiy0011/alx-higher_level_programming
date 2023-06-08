@@ -8,4 +8,4 @@ if __name__ == "__main__":
     print("{} + {} = {}".format(a, b, (calc.add(a, b))))
     print("{} - {} = {}".format(a, b, (calc.subtract(a, b))))
     print("{} * {} = {}".format(a, b, (calc.multiply(a, b))))
-    print("{} / {} = {}".format(a, b, int((calc.divide(a, b)))), end ='')
+    print("{} / {} = {:.0f}".format(a, b,(calc.divide(a, b))), end ='')
