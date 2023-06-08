@@ -3,6 +3,6 @@ def islower(c):
     if 'a' <= c <= 'z':
         return True
     elif '':
-        return True
+        return False
     else:
         return False
