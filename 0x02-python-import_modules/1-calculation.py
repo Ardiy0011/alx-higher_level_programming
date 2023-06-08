@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from calculator_1 import add, subtract, multiply, divide
+    import calculator_1 as calc
 
     a = 10
     b = 5
 
-    print("{} + {} = {}".format(a, b, (add(a, b))))
-    print("{} - {} = {}".format(a, b, (subtract(a, b))))
-    print("{} * {} = {}".format(a, b, (multiply(a, b))))
-    print("{} / {} = {}".format(a, b, int((divide(a, b)))), end ='')
+    print("{} + {} = {}".format(a, b, (calc.add(a, b))))
+    print("{} - {} = {}".format(a, b, (calc.subtract(a, b))))
+    print("{} * {} = {}".format(a, b, (calc.multiply(a, b))))
+    print("{} / {} = {}".format(a, b, int((calc.divide(a, b)))))
