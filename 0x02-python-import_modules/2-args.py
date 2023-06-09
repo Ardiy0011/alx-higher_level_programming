@@ -4,6 +4,7 @@ def arglist(argv):
     length = len(argv) - 1
     if length == 0:
         print("{} arguments.".format(length))
+        print(".")
     elif length == 1:
         print("{} argument:".format(length))
         print("1: {}".format(argv[1]))
