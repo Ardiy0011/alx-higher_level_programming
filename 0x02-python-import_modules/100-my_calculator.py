@@ -17,7 +17,7 @@ def main():
 
     a, operator, b = map(int, sys.argv[1:])
     result = maths[operator](a, b)
-    print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
+    print("{} {} {} = {}".format(a, operator, b, result))
 
 if __name__ == "__main__":
     main()
