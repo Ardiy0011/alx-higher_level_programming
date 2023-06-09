@@ -10,7 +10,7 @@ def arglist(argv):
     while i <= length:
         total += int(argv[i])
         i += 1
-    print("{:d}".format(total))
+    print(total)
 
 
 if __name__ == "__main__":
