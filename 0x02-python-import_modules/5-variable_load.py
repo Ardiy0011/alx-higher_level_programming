@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import variable_load_5
+from variable_load_5 import a as simple
 
 
-def find_variable():
-    print(variable_load_5.a)
+def variable():
+    print(simple)
 
 
 if __name__ == "__main__":
-    find_variable()
+    variable()
