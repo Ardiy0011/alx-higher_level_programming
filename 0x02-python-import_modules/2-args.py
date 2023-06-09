@@ -3,14 +3,16 @@
 def arglist(argv):
     length = len(argv) - 1
     if length == 0:
-        print("{:d} arguments.".format(length))
+        print("{} arguments.".format(length))
     elif length == 1:
-        print("{:d} argument:".format(length))
+        print("{} argument:".format(length))
         print("1: {}".format(argv[1]))
     else:
-        print("{:d} arguments:".format(length))
-        for i in range(1, length + 1):
-            print("{}: {}".format(i, argv[i]))
+        print("{} arguments:".format(length))
+        i = 1
+        while i <= length:
+            print("{:d}: {:s}".format(i, argv[i]))
+            i += 1
 
 if __name__ == "__main__":
     import sys
