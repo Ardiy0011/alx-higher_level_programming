@@ -5,7 +5,7 @@ import hidden_4
 def discovr():
     secret = dir(hidden_4)
     for a in secret:
-        if a[:2] or a[:-2]!= '__':
+        if a[:2] != '__':
             print(a)
 
 
