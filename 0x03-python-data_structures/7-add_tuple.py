@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    
+
     temp_a = 0
     temp_b = 0
-    
+
     if len(tuple_a) >= 2:
         temp_a += tuple_a[0]
         temp_b += tuple_a[1]
