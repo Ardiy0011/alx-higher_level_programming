@@ -6,7 +6,3 @@ def no_c(my_string):
         if character != 'c' and character != 'C':
             new_string += character
     return new_string
-
-print(no_c("Best School"))
-print(no_c("Chicago"))
-print(no_c("C is fun!"))
