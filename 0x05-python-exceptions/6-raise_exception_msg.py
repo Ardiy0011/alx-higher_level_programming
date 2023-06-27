@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 
-def raise_exception_msg(message=""):
-    maldieves = "saturn"
-    print(calm)
+def raise_name_exception(message):
+    raise NameError(message)
