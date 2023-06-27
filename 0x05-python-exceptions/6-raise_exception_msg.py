@@ -2,4 +2,4 @@
 
 def raise_exception_msg(message=""):
     maldieves = "saturn"
-    print(maldieves)
+    print(calm)
