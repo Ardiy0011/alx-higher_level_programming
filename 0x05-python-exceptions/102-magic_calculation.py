@@ -2,4 +2,4 @@
 
 def magic_calculation(a, b):
     result = 0
-    return list(result)
+    return int(result)
