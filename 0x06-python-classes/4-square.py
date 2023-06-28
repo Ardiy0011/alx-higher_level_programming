@@ -13,7 +13,7 @@ class Square:
         Args:
             size (int): The size of the new square.
         """
-        if size != int(size):
+        if size != float(size):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
@@ -25,7 +25,7 @@ class Square:
     
     @size.setter
     def size(self, value):
-        if value != int(value):
+        if value != float(value):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
