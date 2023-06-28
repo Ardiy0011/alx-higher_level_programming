@@ -19,10 +19,12 @@ class Square:
 
     @property
     def size(self):
+        """py getter"""
         return self.__size
     
     @size.setter
     def size(self, value):
+        """py setter"""
         if value != float(value):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -34,7 +36,9 @@ class Square:
         return int(self.__size) * int(self.__size)
     
     def my_print(self):
+        """print empty line if zero"""
         if self.size == 0:
             print()
         for _ in range(self.size):
+            """printing hash square based on obj size"""
             print("#" * self.size )
