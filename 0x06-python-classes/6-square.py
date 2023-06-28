@@ -16,7 +16,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        self.position =position
+        self.position = position
 
     @property
     def size(self):
@@ -31,7 +31,6 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     @property
     def position(self):
