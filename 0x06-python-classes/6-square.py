@@ -52,27 +52,13 @@ class Square:
         return int(self.__size) * int(self.__size)
     
     def my_print(self):
-        """print empty line if zero"""
-        if self.size == 0:
-            print()
-        for _ in range(self.size):
-            """printing hash square based on obj size"""
+        """Print the square with the # character."""
+        if self.__size == 0:
+            print("")
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
             [print(" ", end="") for j in range(0, self.__position[0])]
             [print("#", end="") for k in range(0, self.__size)]
             print("")
-
-
-my_square_1 = Square(3)
-my_square_1.my_print()
-
-print("--")
-
-my_square_2 = Square(3, (1, 1))
-my_square_2.my_print()
-
-print("--")
-
-my_square_3 = Square(3, (3, 0))
-my_square_3.my_print()
-
-print("--")
