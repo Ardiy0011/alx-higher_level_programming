@@ -16,7 +16,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        self.position = position
+        self.position =position
 
     @property
     def size(self):
@@ -32,6 +32,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+
     @property
     def position(self):
         """Get/set the current position of the square."""
@@ -39,7 +40,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple or
+        if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
