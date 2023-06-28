@@ -27,3 +27,16 @@ class Square:
     def area(self):
         """area of  square."""
         return int(self.__size) * int(self.__size)
+
+    def __lt__(self, other):
+        """general comparison."""
+        if isinstance(other, Square):
+            return (
+                self.__size < other.__size,
+                self.__size <= other.__size,
+                self.__size == other.__size,
+                self.__size != other.__size,
+                self.__size > other.__size,
+                self.__size >= other.__size
+            )
+        return NotImplemented
