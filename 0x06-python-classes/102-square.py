@@ -29,14 +29,47 @@ class Square:
         return int(self.__size) * int(self.__size)
 
     def __lt__(self, other):
-        """general comparison."""
+        """Less than comparison."""
         if isinstance(other, Square):
-            return (
-                self.__size < other.__size,
-                self.__size <= other.__size,
-                self.__size == other.__size,
-                self.__size != other.__size,
-                self.__size > other.__size,
-                self.__size >= other.__size
-            )
-        return NotImplemented
+            return self.__size < other.__size
+
+    def __le__(self, other):
+        """Less than or equal to comparison."""
+        if isinstance(other, Square):
+            return self.__size <= other.__size
+
+    def __eq__(self, other):
+        """Equal to comparison."""
+        if isinstance(other, Square):
+            return self.__size == other.__size
+
+    def __ne__(self, other):
+        """Not equal to comparison."""
+        if isinstance(other, Square):
+            return self.__size != other.__size
+
+    def __gt__(self, other):
+        """Greater than comparison."""
+        if isinstance(other, Square):
+            return self.__size > other.__size
+
+    def __ge__(self, other):
+        """Greater than or equal to comparison."""
+        if isinstance(other, Square):
+            return self.__size >= other.__size
+
+s_5 = Square(5)
+s_6 = Square(6)
+
+if s_5 < s_6:
+    print("Square 5 < Square 6")
+if s_5 <= s_6:
+    print("Square 5 <= Square 6")
+if s_5 == s_6:
+    print("Square 5 == Square 6")
+if s_5 != s_6:
+    print("Square 5 != Square 6")
+if s_5 > s_6:
+    print("Square 5 > Square 6")
+if s_5 >= s_6:
+    print("Square 5 >= Square 6")
