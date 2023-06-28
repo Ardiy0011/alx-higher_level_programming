@@ -11,6 +11,7 @@ class Square:
         Args:
             size (int): The size of the new square.
         """
+        self.__size = size
     @property
     def size(self):
         """py getter"""
@@ -19,7 +20,7 @@ class Square:
     @size.setter
     def size(self, value):
         """py setter"""
-        if value != float(value):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
