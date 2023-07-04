@@ -44,13 +44,13 @@ class Rectangle:
 
     def area(self):
         """returns the area of a rectangle"""
-        return int(self.__width) * int(self.__height)
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        """returns the perimeter of a rectangle"""
+        """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
-            return 0
-        return (int(self.__width * 2) + int(self.__height * 2))
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))  
 
     def __str__(self):
         """print empty line if zero"""
