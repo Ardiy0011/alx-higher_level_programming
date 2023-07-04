@@ -17,9 +17,9 @@ class Rectangle:
     def width(self, value):
         """sets attribute value"""
         try:
-            if not isinstance(value, int):
+            if not isinstance(self.__width, int) or isinstance(self.__width, bool):
                 raise TypeError("width must be an integer")
-            elif value < 0:
+            if self.__width < 0:
                 raise ValueError("width must be >= 0")
             self.__width = value
         except (TypeError, ValueError) as e:
@@ -34,23 +34,23 @@ class Rectangle:
     def height(self, value):
         """sets attribute value"""
         try:
-            if not isinstance(value, int):
-                raise TypeError("height must be an integer")
-            elif value < 0:
-                raise ValueError("height must be >= 0")
+            if not isinstance(self.__width, int) or isinstance(self.__width, bool):
+                raise TypeError("width must be an integer")
+            if self.__width < 0:
+                raise ValueError("width must be >= 0")
             self.__height = value
         except (TypeError, ValueError) as e:
             print(e)
 
     def area(self):
         """returns the area of a rectangle"""
-        return int(self.__width) * int(self.__height)
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        """returns the perimeter of a rectangle"""
+        """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
-            return 0
-        return (int(self.__width * 2) + int(self.__height * 2))
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))  
 
     def __str__(self):
         """print empty line if zero"""
