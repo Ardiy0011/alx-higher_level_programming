@@ -58,20 +58,20 @@ class Rectangle:
         return (int(self.__width * 2) + int(self.__height * 2))
 
     def __str__(self):
-        """print empty line if zero"""
+        """Return the printable representation of the Rectangle.
+        Represents the rectangle with the # character.
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        prim = ""
-        for _ in range(self.__height):
-            prim += str(self.print_symbol) * self.__width
-            prim += "\n"
-        return str(prim)
+        rows = ['#' * self.__width for _ in range(self.__height)]
+        return "\n".join(rows)
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
+        """deletes an instance base of a call"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
