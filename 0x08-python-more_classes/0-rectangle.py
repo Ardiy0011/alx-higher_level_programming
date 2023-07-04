@@ -3,6 +3,7 @@
 Define a class rectangle.
 """
 
+
 class Rectangle:
     """
     initializing empty rectangle class
