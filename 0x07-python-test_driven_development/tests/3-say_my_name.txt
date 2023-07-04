@@ -1,0 +1,39 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    Tests run:
+========================================================
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+========================================================
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+========================================================
+
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+========================================================
+
+    >>> say_my_name("b")
+    Please provide a first name and last name with at least 2 characters each
+
+========================================================
+
+    >>> say_my_name(" ")
+    Please provide a first name and last name with at least 2 characters each
+
+========================================================
+
+    >>> say_my_name("b", "White")
+    Please provide a first name and last name with at least 2 characters each
+
+========================================================
+
+    >>> say_my_name(12, "White")
+    first_name must be a string
+
+========================================================
