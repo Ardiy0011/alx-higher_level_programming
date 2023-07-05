@@ -26,22 +26,18 @@ def text_indentation(text):
             raise ValueError("text cannot be an empty string")
 
         count = 0
+        while count < len(text) and text[count] == ' ':
+            count += 1
+
         while count < len(text):
-            if text[count] == '  ':
-                count += 1
-                continue
-
             print(text[count], end="")
-
-            if text[count] in ['\n', '.', '?', ':']:
-                if text[count] in ['.', '?', ':']:
+            if text[count] == "\n" or text[count] in ".?:":
+                if text[count] in ".?:":
                     print("\n")
                 count += 1
-
                 while count < len(text) and text[count] == ' ':
                     count += 1
                 continue
-
             count += 1
 
     except TypeError as e:
