@@ -37,7 +37,7 @@ def text_indentation(text):
         if paragraph:
             paragraphs.append(paragraph.rstrip())
 
-        for paragraph in paragraphs:
+        for i, paragraph in enumerate(paragraphs):
             print(paragraph)
             print()
 
