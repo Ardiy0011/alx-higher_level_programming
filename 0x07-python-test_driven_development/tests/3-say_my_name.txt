@@ -1,8 +1,17 @@
->>> say_my_name = __import__('3-say_my_name').say_my_name
+===========================
+How to Use 3-say_my_name.py
+===========================
 
-    Tests run:
-========================================================
+modules thatdefines a function ``say_my_name(first_name, last_name="")``.
 
+Usage
+=====
+
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("John", "Smith")
     My name is John Smith
 

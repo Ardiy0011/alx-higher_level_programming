@@ -1,9 +1,18 @@
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+==============================
+How to Use 2-matrix_divided.py
+==============================
 
+module that defines a matrix division function ``matrix_divided(matrix, div)``.
 
-    Tests run:
-========================================================
+Usage
+=====
 
+``matrix_divided(...)`` returns a new matrix that is a copy of the parameter
+``matrix`` with all elements divided by ``div``.
+
+::
+
+        >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
         >>> matrix = [
         ...     [1, 2, 3],
         ...     [4, 5, 6]
@@ -51,4 +60,3 @@
         division by zero
 
 ========================================================
-
