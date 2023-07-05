@@ -25,20 +25,22 @@ def text_indentation(text):
         if not text.strip():
             raise ValueError("text cannot be an empty string")
 
-        count = 0
-        while count < len(text) and text[count] == ' ':
-            count += 1
+        paragraphs = []
+        paragraph = ""
 
-        while count < len(text):
-            print(text[count], end="")
-            if text[count] == "\n" or text[count] in ".?:":
-                if text[count] in ".?:":
-                    print("\n")
-                count += 1
-                while count < len(text) and text[count] == ' ':
-                    count += 1
-                continue
-            count += 1
+        for char in text:
+            paragraph += char
+            if char in ['.', '?', ':']:
+                paragraphs.append(paragraph.strip())
+                paragraph = " "
+
+        if paragraph:
+            paragraphs.append(paragraph.strip())
+
+        for i, paragraph in enumerate(paragraphs):
+
+            print(paragraph)
+            print()
 
     except TypeError as e:
         print(e)
