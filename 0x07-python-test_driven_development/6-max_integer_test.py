@@ -52,3 +52,7 @@ class TestMaxInteger(unittest.TestCase):
         """Testing an empty string."""
         self.assertEqual(max_integer(""), None)
 
+    def test_unordered_list(self):
+        """Test an unordered list of integers."""
+        unordered = [1, 2, 4, 3]
+        self.assertEqual(max_integer(unordered), 4)
