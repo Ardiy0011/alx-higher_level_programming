@@ -41,12 +41,10 @@ integers/floats")
             raise ZeroDivisionError("division by zero")
 
         res = []
-        bes = []
-        for value in range(len(matrix[0])):
-            result1 = matrix[0][value] / div
-            result2 = matrix[1][value] / div
-            res.append(round(result1, 2))
-            bes.append(round(result2, 2))
-        return list((res, bes))
+        for row in matrix:
+            result_row = [round(value / div, 2) for value in row]
+            res.append(result_row)
+
+        return res
     except (TypeError, ZeroDivisionError, IndexError) as e:
         return str(e)
