@@ -22,9 +22,6 @@ def text_indentation(text):
         if not isinstance (text, str):
             raise TypeError("text must be a string")
 
-        if not text.strip():
-            raise ValueError("text cannot be an empty string")
-
         paragraphs = []
         paragraph = ""
 
