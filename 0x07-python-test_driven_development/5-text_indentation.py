@@ -32,7 +32,7 @@ def text_indentation(text):
             paragraph += char
             if char in ['.', '?', ':']:
                 paragraphs.append(paragraph.strip())
-                paragraph = " "
+                paragraph = ""
 
         if paragraph:
             paragraphs.append(paragraph.strip())
