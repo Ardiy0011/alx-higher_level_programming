@@ -13,6 +13,11 @@ class TestMaxInteger(unittest.TestCase):
         expected_ = [1, 5, 3, 9, 2]
         self.assertEqual(max_integer(expected_), 9)
 
+    def max_at_begining(self):
+        """regular expectation"""
+        expected_ = [9, 5, 3, 2, 1]
+        self.assertEqual(max_integer(expected_), 9)
+
     def empty(self):
         """Test where list is empty"""
         Empty_list = []

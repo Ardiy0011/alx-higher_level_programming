@@ -25,7 +25,6 @@ def text_indentation(text):
         if not text.strip():
             raise ValueError("text cannot be an empty string")
 
-
         count = 0
         while count < len(text) and text[count] == ' ':
             count += 1
