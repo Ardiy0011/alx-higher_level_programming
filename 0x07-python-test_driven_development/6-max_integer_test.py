@@ -15,8 +15,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def max_at_begining(self):
         """regular expectation"""
-        expected_ = [9, 5, 3, 2, 1]
-        self.assertEqual(max_integer(expected_), 9)
+        max_at_beg_ = [9, 5, 3, 2, 1]
+        self.assertEqual(max_integer(max_at_beg_), 9)
 
     def empty(self):
         """Test where list is empty"""
@@ -47,3 +47,8 @@ class TestMaxInteger(unittest.TestCase):
         """Test a list of strings."""
         strings = ["Brennan", "is", "my", "name"]
         self.assertEqual(max_integer(strings), "name")
+
+    def test_empty_string(self):
+        """Testing an empty string."""
+        self.assertEqual(max_integer(""), None)
+
