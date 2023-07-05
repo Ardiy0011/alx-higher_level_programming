@@ -43,4 +43,3 @@ def text_indentation(text):
         print(e)
     except ValueError as e:
         print(e)
-

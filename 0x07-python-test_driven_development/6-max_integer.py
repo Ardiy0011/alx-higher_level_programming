@@ -15,10 +15,3 @@ def max_integer(list=[]):
             result = list[i]
         i += 1
     return result
-
-
-def main():
-
-    print(max_integer(["Brennan", "is", "my", "name"]))
-    print(max_integer([1, 3, 4, 2]))
-main()
