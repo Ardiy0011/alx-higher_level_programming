@@ -31,11 +31,11 @@ def text_indentation(text):
         for char in text:
             paragraph += char
             if char in '.?:':
-                paragraphs.append(paragraph.rstrip())
+                paragraphs.append(paragraph.strip())
                 paragraph = ""
 
         if paragraph:
-            paragraphs.append(paragraph.rstrip())
+            paragraphs.append(paragraph.strip())
 
         for i, paragraph in enumerate(paragraphs):
             print(paragraph)
