@@ -2,6 +2,7 @@
 """Unittest for max_integer([..])
 """
 
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
@@ -12,11 +13,16 @@ class TestMaxInteger(unittest.TestCase):
         expected_ = [1, 5, 3, 9, 2]
         self.assertEqual(max_integer(expected_), 9)
 
+    def max_at_begining(self):
+        """regular expectation"""
+        max_at_beg_ = [7, 5, 3, 2, 1]
+        self.assertEqual(max_integer(max_at_beg_), 9)
+
     def empty(self):
         """Test where list is empty"""
         Empty_list = []
         self.assertEqual(max_integer(Empty_list), None)
-    
+
     def negative(self):
         """Test for negative integers"""
         non_integer = [-10, -5, -3, -20]
@@ -38,11 +44,18 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(string), 'r')
 
     def test_list_of_strings(self):
-        """Test a list of strings."""
+        """Testing a list of strings."""
         strings = ["Brennan", "is", "my", "name"]
         self.assertEqual(max_integer(strings), "name")
 
+    def test_empty_string(self):
+        """Testing an empty string."""
+        self.assertEqual(max_integer(""), None)
+
+    def test_unordered_list(self):
+        """Testing an unordered list of integers."""
+        unordered = [1, 2, 4, 3]
+        self.assertEqual(max_integer(unordered), 4)
 
 if __name__ == '__main__':
     unittest.main()
-    
