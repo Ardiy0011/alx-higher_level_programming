@@ -22,21 +22,15 @@ def text_indentation(text):
         if not isinstance (text, str):
             raise TypeError("text must be a string")
 
-        paragraphs = []
-        paragraph = ""
+        if not text.strip():
+            raise ValueError("text cannot be an empty string")
 
-        for char in text:
-            paragraph += char
-            if char in '.?:':
-                paragraphs.append(paragraph.strip())
-                paragraph = ""
-
-        if paragraph:
-            paragraphs.append(paragraph.strip())
-
-        for i, paragraph in enumerate(paragraphs):
-            print(paragraph)
-            print()
+        length = len(text)
+        for i in range(length):
+            print(text[i], end="")
+            if text[i] in ['.', '?', ':']:
+                text = text[i+1:].lstrip()  # Remove trailing whitespace
+                print("\n")
 
     except TypeError as e:
         print(e)
