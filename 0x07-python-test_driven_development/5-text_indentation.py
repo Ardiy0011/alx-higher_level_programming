@@ -2,6 +2,8 @@
 """
 module that prints out texts in paragraph lines using delimeters
 """
+
+
 def text_indentation(text):
     """
     Function to print out texts in paragraphs based on existing delimiters.
@@ -17,7 +19,7 @@ def text_indentation(text):
         ValueError: If 'text' is an empty string.
     """
     try:
-        if not isinstance(text, str):
+        if not isinstance (text, str):
             raise TypeError("text must be a string")
 
         if not text.strip():

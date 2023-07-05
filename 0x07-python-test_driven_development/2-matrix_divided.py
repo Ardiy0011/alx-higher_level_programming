@@ -23,18 +23,18 @@ def matrix_divided(matrix, div):
         ZeroDivisionError : if divisor is 0
     """
     try:
-        if not all(isinstance(value, (int, float)) for row in matrix \
+        if not all (isinstance(value, (int, float)) for row in matrix \
                    for value in row):
             raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
 
-        if any(len(row) != len(matrix[0]) for row in matrix):
+        if any (len(row) != len(matrix[0]) for row in matrix):
             raise TypeError("Each row of the matrix must have the same size")
 
         if len(matrix) == 0 :
            raise IndexError("empty matrix")
 
-        if not isinstance(div, (int, float)):
+        if not isinstance (div, (int, float)):
             raise TypeError("div must be a number")
 
         if div == 0:

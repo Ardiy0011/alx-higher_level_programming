@@ -2,6 +2,8 @@
 """
 module printing strings
 """
+
+
 def say_my_name(first_name, last_name=""):
 
     """
@@ -21,12 +23,13 @@ def say_my_name(first_name, last_name=""):
   
     """
     try:
-        if not isinstance(first_name, str):
+        if not isinstance (first_name, str):
             raise TypeError ("first_name must be a string")
-        if not isinstance(last_name, str):
+        if not isinstance (last_name, str):
             raise TypeError ("last_name must be a string")
         if len(first_name) < 2:
-            print("Please provide a first name and last name with at least 2 characters each")
+            print("Please provide a first name and last name with at \
+least 2 characters each")
         else:
             print("My name is {} {}".format(first_name, last_name))
     except TypeError as e:

@@ -2,6 +2,7 @@
 """Unittest for max_integer([..])
 """
 
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
@@ -16,7 +17,7 @@ class TestMaxInteger(unittest.TestCase):
         """Test where list is empty"""
         Empty_list = []
         self.assertEqual(max_integer(Empty_list), None)
-    
+
     def negative(self):
         """Test for negative integers"""
         non_integer = [-10, -5, -3, -20]
