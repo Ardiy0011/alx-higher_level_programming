@@ -37,14 +37,11 @@ def text_indentation(text):
         if paragraph:
             paragraphs.append(paragraph.rstrip())
 
-        for i, paragraph in enumerate(paragraphs):
+        for paragraph in paragraphs:
             print(paragraph)
-            print(len(paragraph))
             print()
 
     except TypeError as e:
         print(e)
     except ValueError as e:
         print(e)
-
-text_indentation("Holberton School")
