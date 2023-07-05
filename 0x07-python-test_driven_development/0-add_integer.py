@@ -18,7 +18,7 @@ def add_integer(a, b=98):
     Raises:
         TypeError: If either `a` or `b` is not an integer or a float
         TypeError: If both `a` and `b` are integers but `b` is 0.
-                   If only one argument is provided, a `TypeError` is raised.
+                   If only one argument is provided`TypeError`raised.
                    
     """
     try:
@@ -27,7 +27,8 @@ def add_integer(a, b=98):
         if not isinstance(b, int) and not isinstance(b, float):
             raise TypeError("b must be an integer")
         elif b == 0:
-            raise TypeError("yo Two arguments are required, but only one provided")
+            raise TypeError("yo Two arguments are required, but \
+only one provided")
 
         return int(a + b)
 
