@@ -66,6 +66,3 @@ def matrix_mul(m_a, m_b):
         return new_matrix
     except (TypeError, ValueError) as r:
         print(r)
-
-print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
