@@ -30,10 +30,6 @@ class Square:
         """area of  square."""
         return int(self.__size) * int(self.__size)
 
-    def my_print(self):
-        """print empty line if zero"""
-        if self.size == 0:
-            print()
-        for _ in range(self.size):
-            """printing hash square based on obj size"""
-            print("#" * self.size )
+    for _ in range(width):
+        for _ in range(height):
+            print("#")
