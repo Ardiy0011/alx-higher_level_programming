@@ -3,6 +3,7 @@
 this is a amodule comtaining a sum function
 """
 
+
 def add_integer(a, b=98):
 
     """
@@ -18,7 +19,7 @@ def add_integer(a, b=98):
     Raises:
         TypeError: If either `a` or `b` is not an integer or a float
         TypeError: If both `a` and `b` are integers but `b` is 0.
-                   If only one argument is provided`TypeError`raised.
+        TypeError: If only one argument is provided`TypeError`raised.
                    
     """
     try:
