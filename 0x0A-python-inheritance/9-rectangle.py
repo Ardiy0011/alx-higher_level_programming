@@ -1,18 +1,22 @@
 #!/usr/bin/python3
-"""class with validators"""
+"""
+class with validators
+"""
 
 
 BaseGeometry = __import__('8-rectangle').Rectangle
 
 
 class Rectangle(BaseGeometry):
-    """derived class of base class BaseGeometry"""
+    """
+    derived class of base class BaseGeometry
+    """
 
     def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
     def area(self):
         return(self.__width) * (self.__height)
