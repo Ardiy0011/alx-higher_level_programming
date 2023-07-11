@@ -1,16 +1,22 @@
 #!/usr/bin/python3
-"""subclass that inherits from a base class list"""
+"""
+Module: 1-my_list
+"""
 
 
-def print_sorted(self):
-    """
-    function that prints the sorted list from the base class
-    """
-    try:
-        for item in self:
-            if not isinstance(item, int):
-                raise TypeError("List items must be an integer")
+class MyList(list):
+    ''' Represents a MyList
+    '''
 
-        print(sorted(self))
-    except TypeError as e:
-        print(e)
+    def print_sorted(self):
+        """
+        function that prints the sorted list from the base class
+        """
+        try:
+            for item in self:
+                if not isinstance(item, int):
+                    raise TypeError("List items must be an integer")
+
+            print(sorted(self))
+        except TypeError as e:
+            print(e)
