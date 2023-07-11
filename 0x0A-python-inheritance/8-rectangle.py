@@ -1,36 +1,30 @@
 #!/usr/bin/python3
-"""class with validators"""
+"""Defines a base geometry class BaseGeometry."""
 
 
 class BaseGeometry:
-    """base class of chain of inheritance"""
+    """Reprsent base geometry."""
+
     def area(self):
-        """
-        function that prints the sorted list from the base class
-        """
+        """Not yet implemented."""
         raise Exception("area() is not implemented")
-    
+
     def integer_validator(self, name, value):
-        """
-        function that prints the sorted list from the base class
-
+        """Validate a parameter as an integer.
+        Args:
+            name (str): The name of the parameter.
+            value (int): The parameter to validate.
         Raises:
-        TypeError: If value not int an name not str
-        valueError: if value equal to or less than 0
-        TypeError: if empty
-
+            TypeError: If value is not an integer.
+            ValueError: If value is <= 0.
         """
-        self.name = name
-        self.value = value
-
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(self.name))
-        if isinstance(value, bool):
-            raise TypeError("{} must be an integer".format(self.name))
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(self.name))
+            raise ValueError("{} must be greater than 0".format(name))
         if not isinstance(name, str):
-            raise TypeError("place a string instead of {}".format(self.name))
+            raise TypeError("place a string instead of {}".format(name))
+
 
 class Rectangle(BaseGeometry):
     """derived class of base class BaseGeometry"""
