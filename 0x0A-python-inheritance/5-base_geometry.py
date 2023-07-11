@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-subclass that inherits from a base class list
+This is an empty baseclass.
 """
 
 
 class BaseGeometry:
-        """
-        Represents the base class mylist
-        """
-        pass
+    ''' Class: BaseGeometry
+    '''
+    pass
