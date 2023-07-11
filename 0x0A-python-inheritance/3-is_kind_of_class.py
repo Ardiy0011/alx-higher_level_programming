@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""subclass that inherits from a base class list"""
+"""
+subclass that inherits from a base class list
+"""
 
 
 def is_kind_of_class(obj, a_class):
