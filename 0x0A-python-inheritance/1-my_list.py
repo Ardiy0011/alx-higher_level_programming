@@ -12,4 +12,11 @@ class MyList(list):
         """
         function that prints the sorted list from the base class
         """
-        print(sorted(self))
+        try:
+            for item in self:
+                if not isinstance(item, int):
+                    raise TypeError("List items must be an integer")
+
+            print(sorted(self))
+        except TypeError as e:
+            print(e)
