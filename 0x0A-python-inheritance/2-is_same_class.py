@@ -6,5 +6,6 @@ def is_same_class(obj, a_class):
     """
     function that prints the sorted list from the base class
     """
-    if isinstance(type(obj), a_class):
+    if type(obj) == a_class:
         return True
+    return False
