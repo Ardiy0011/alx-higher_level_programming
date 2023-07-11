@@ -25,6 +25,8 @@ class BaseGeometry:
         if not isinstance(name, str):
             raise TypeError("place a string instead of {}".format(name))
 
+"""Derived class for BaseGeometry."""
+
 
 class Rectangle(BaseGeometry):
     """derived class of base class BaseGeometry"""
