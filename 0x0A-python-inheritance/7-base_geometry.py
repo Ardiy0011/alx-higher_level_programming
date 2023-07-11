@@ -23,4 +23,4 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
         if not isinstance(name, str):
-            raise TypeError("place a string instead of {}".format(self.name))
+            raise TypeError("place a string instead of {}".format(name))
