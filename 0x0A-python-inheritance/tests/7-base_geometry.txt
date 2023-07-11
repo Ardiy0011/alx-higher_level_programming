@@ -73,10 +73,12 @@ Passing three arguments to integer_validator
     	      ...
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
-Passing name instead of number
+Passing three arguments to integer_validator
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator(1 1)
-    place a string instead of 1
+    >>> bg.integer_validator("name", 1, 2)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
 Passing one argument to area method
     >>> bg = BaseGeometry()
