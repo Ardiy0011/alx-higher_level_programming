@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
+    """ 
+    Represents the base class mylist
+    """
     pass
-    """
-    function that prints the sorted list from the base class
-    """
