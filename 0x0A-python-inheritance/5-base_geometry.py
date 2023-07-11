@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """ 
-    Represents the base class mylist
-    """
-    pass
+        """ 
+        Represents the base class mylist
+        """
+        pass
