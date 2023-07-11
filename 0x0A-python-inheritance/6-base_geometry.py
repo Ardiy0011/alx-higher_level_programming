@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""subclass that inherits from a base class list"""
+"""
+This is the baseclass.
+"""
 
 
 class BaseGeometry:
-    """
-    function that prints the sorted list from the base class
-    """
+    ''' Class: BaseGeometry
+    '''
     def area(self):
 
         raise Exception("area() is not implemented")
