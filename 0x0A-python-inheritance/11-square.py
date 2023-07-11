@@ -4,31 +4,18 @@
 
 BaseGeometry = __import__('10-square').Square
 
-class Rectangle(BaseGeometry):
-    """
-    derived class of base class BaseGeometry
-    """
 
-    def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
-
-    def area(self):
-        return(self.__width) * (self.__height)
-
-
-    def __str__(self):
-        """ print """
-        return ("[{}] {}/{}".format(__class__.__name__, self.__width, self.__height))
+"""
+the Square class
+"""
 
 
 class Square(Rectangle):
+    """ Square Class """
     def __init__(self, size):
+        """ instantiation with size """
         self.__size = size
-        """implementing the area through inheritance"""
-        super().__init__(self.__size , self.__size)
+        super().__init__(self.__size, self.__size)
 
 
     def __str__(self):
