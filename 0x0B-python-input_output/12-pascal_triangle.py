@@ -1,28 +1,34 @@
-#!/usr/bin/python3
-''' a class Student that defines a student
-'''
+def pascal_triangle(n):
+    triangle = []
+    for i in range(n):
+        row = [1] * (i + 1)  # Each row starts with '1' repeated 'i+1' times
+        if i > 1:
+            prev_row = triangle[i - 1]
+            for j in range(1, i):
+                row[j] = prev_row[j - 1] + prev_row[j]
+        triangle.append(row)
+
+    # Print the triangle
+    for row in triangle:
+        print(row)
 
 
-class Student:
-    """base class or super class"""
+# Test the function
+pascal_triangle(5)
 
-    def __init__(self, first_name, last_name, age):
-        '''method __init__
-        '''
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
 
-    def to_json(self, attrs=None):
-        """public instance method """
-        if (type(attrs) == list and
-            any(type(element) == str for element in attrs)):
-            return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
-        return self.__dict__
+"""
+12-main
+"""
+pascal_triangle = __import__('12-pascal_triangle').pascal_triangle
 
-    def reload_from_json(self, json):
-        """
-        Replace all attributes of the Student.
-        """
-        for key, value in json.items():
-            setattr(self, key, value)
+def print_triangle(triangle):
+    """
+    Print the triangle
+    """
+    for row in triangle:
+        print("[{}]".format(",".join([str(x) for x in row])))
+
+
+if __name__ == "__main__":
+    print_triangle(pascal_triangle(5))
