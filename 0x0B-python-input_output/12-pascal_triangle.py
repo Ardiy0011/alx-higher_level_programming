@@ -20,5 +20,5 @@ def pascal_triangle(n):
                 row[j] = prev_row[j - 1] + prev_row[j]
         triangle.append(row)
 
-    for row in triangle:
-        print(row)
+        for row in triangle:
+            print(row)
