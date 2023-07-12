@@ -15,9 +15,8 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
+    def to_json(self, at=None):
         """public instance method """
-        if (type(attrs) == list and \
-any(type(element) == str for element in attrs)):
-            return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
+        if (type(at) == list and any(type(e) == str for e in at)):
+            return {i: getattr(self, i) for i in at if hasattr(self, i)}
         return self.__dict__
