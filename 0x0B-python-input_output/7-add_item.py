@@ -12,12 +12,10 @@ if __name__ == "__main__":
         __import__('6-load_from_json_file').load_from_json_file
 
 try:
-    if len(sys.argv) == 1:
-        raise Exception
-
-except Exception as e:
+    items = load_from_json_file("add_item.json")
+except Exception:
     print([])
-else:
-    item = load_from_json_file('add_item.json')
-    item.extend(sys.argv[1:])
-    save_to_json_file(item, 'add_item.json')
+
+item = load_from_json_file('add_item.json')
+item.extend(sys.argv[1:])
+save_to_json_file(item, 'add_item.json')
