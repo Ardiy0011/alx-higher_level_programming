@@ -20,7 +20,3 @@ def append_after(filename="", search_string="", new_string=""):
             file.write(line)
             if '\n' in line and not search_string:
                 file.write(new_string)
-
-        print("success")
-
-append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
