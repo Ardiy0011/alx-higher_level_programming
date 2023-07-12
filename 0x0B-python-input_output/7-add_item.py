@@ -2,7 +2,6 @@
 """
 function that odes both load and saving json files
 """
-import json
 import sys
 
 
