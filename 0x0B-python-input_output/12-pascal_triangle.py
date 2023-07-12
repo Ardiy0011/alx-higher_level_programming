@@ -5,20 +5,18 @@ function that prints pascals triangle
 
 
 def pascal_triangle(n):
-    """
-    function that prints pascals triangle
+    """Represent Pascal's Triangle of size n.
+    Returns a list of lists of integers representing the triangle.
     """
     if n <= 0:
         return []
 
-    triangle = []
-    for i in range(n):
-        row = [1] * (i + 1)
-        if i > 1:
-            prev_row = triangle[i - 1]
-            for j in range(1, i):
-                row[j] = prev_row[j - 1] + prev_row[j]
-        triangle.append(row)
-
-        for row in triangle:
-            print(row)
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
