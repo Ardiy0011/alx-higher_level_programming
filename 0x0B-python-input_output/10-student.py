@@ -17,7 +17,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """public instance method """
-        if (type(attrs) == list and
-        any(type(element) == str for element in attrs)):
+        if (type(attrs) == list and \
+any(type(element) == str for element in attrs)):
             return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
         return self.__dict__
