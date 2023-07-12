@@ -1,9 +1,14 @@
 #!/usr/bin/python3
+"""
+function that odes both load and saving json files
+"""
+
+
 import json
 import sys
 
 def save_to_json_file(my_obj, filename):
-    """function that writes a json formatted string on to a text file"""
+    """function that writes a json formatted stto a text file"""
     jasonrep = json.dumps(my_obj)
 
     with open(filename, 'w') as q:
@@ -13,7 +18,7 @@ def save_to_json_file(my_obj, filename):
 
 
 def load_from_json_file(filename):
-    """function that writes a json formatted string on to a text file"""
+    """function that writes a json formatted str a text file"""
     try:
         with open(filename) as q:
             jasonrep = json.load(q)

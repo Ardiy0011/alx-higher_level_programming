@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+function that loads a jason formated text file
+"""
+
+
 import json
 
 def load_from_json_file(filename):

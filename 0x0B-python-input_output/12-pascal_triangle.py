@@ -1,14 +1,20 @@
+#!/usr/bin/python3
+"""
+function that prints pascals triangle
+"""
+
+
 def pascal_triangle(n):
     triangle = []
     for i in range(n):
-        row = [1] * (i + 1)  # Each row starts with '1' repeated 'i+1' times
+        row = [1] * (i + 1)
         if i > 1:
             prev_row = triangle[i - 1]
             for j in range(1, i):
                 row[j] = prev_row[j - 1] + prev_row[j]
         triangle.append(row)
 
-    # Print the triangle
+
     for row in triangle:
         print(row)
 
@@ -28,7 +34,6 @@ def print_triangle(triangle):
     """
     for row in triangle:
         print("[{}]".format(",".join([str(x) for x in row])))
-
 
 if __name__ == "__main__":
     print_triangle(pascal_triangle(5))

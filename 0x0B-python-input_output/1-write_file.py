@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+"""
+function that writes onto a text file
+"""
 
-def write_file(filename="my_first_file.txt", text=""):
+
+def write_file(filename="", text=""):
     """
     function that opens and reads a file
     """
@@ -8,4 +12,3 @@ def write_file(filename="my_first_file.txt", text=""):
         peruse = q.write(text)
 
         return (peruse)
-
