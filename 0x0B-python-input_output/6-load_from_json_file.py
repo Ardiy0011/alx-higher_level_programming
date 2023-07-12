@@ -9,7 +9,7 @@ def load_from_json_file(filename):
     """function that writes a json formatted string on to a text file"""
     try:
         with open(filename) as q:
-            jasonrep = json.load(q)
+            jasonrep = json.loads(q)
     except json.decoder.JSONDecodeError:
         return []
 
