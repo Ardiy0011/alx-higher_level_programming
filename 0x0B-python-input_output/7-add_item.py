@@ -2,6 +2,7 @@
 """
 function that odes both load and saving json files
 """
+import json
 import sys
 
 
@@ -11,10 +12,10 @@ if __name__ == "__main__":
         __import__('6-load_from_json_file').load_from_json_file
 
 try:
-    item = load_from_json_file("add_item.json")
-except Exception:
-    print([])
+    if len(sys.argv) == 1:
+        raise Exception
 
-item = load_from_json_file('add_item.json')
+except Exception:
+    item = []
 item.extend(sys.argv[1:])
 save_to_json_file(item, 'add_item.json')
