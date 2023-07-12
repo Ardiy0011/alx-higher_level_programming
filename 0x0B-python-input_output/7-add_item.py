@@ -13,9 +13,8 @@ if __name__ == "__main__":
 
 try:
     if len(sys.argv) == 1:
-        raise Exception
-
-except Exception:
-    item = []
-item.extend(sys.argv[1:])
-save_to_json_file(item, 'add_item.json')
+        raise FileNotFoundError
+except FileNotFoundError:
+    items = []
+items.extend(sys.argv[1:])
+save_to_json_file(items, "add_item.json")
