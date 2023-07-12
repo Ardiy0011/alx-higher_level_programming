@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def read_file(filename="my_file_0.txt"):
+def read_file(filename=""):
     """
     function that opens and reads a file
     """
