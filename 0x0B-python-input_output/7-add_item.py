@@ -2,10 +2,9 @@
 """
 function that odes both load and saving json files
 """
-
-
 import json
 import sys
+
 
 def save_to_json_file(my_obj, filename):
     """function that writes a json formatted stto a text file"""
