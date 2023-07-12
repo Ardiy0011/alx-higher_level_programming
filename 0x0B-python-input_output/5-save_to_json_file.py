@@ -10,7 +10,7 @@ def save_to_json_file(my_obj, filename):
 
 
     with open(filename, 'w') as q:
-        jasonrep = json.dumps(my_obj)
+        jasonrep = json.dump(my_obj, q)
         peruse = q.write(jasonrep)
 
     return (peruse)
