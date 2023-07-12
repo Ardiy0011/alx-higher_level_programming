@@ -6,25 +6,10 @@ import json
 import sys
 
 
-def save_to_json_file(my_obj, filename):
-    """function that writes a json formatted stto a text file"""
-    jasonrep = json.dumps(my_obj)
-
-    with open(filename, 'w') as q:
-        peruse = q.write(jasonrep)
-
-    return (peruse)
-
-
-def load_from_json_file(filename):
-    """function that writes a json formatted str a text file"""
-    try:
-        with open(filename) as q:
-            jasonrep = json.load(q)
-    except json.decoder.JSONDecodeError:
-        return []
-
-    return jasonrep
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    load_from_json_file = \
+        __import__('6-load_from_json_file').load_from_json_file
 
 try:
     if len(sys.argv) == 1:
