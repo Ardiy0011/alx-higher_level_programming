@@ -70,6 +70,7 @@ class Rectangle(Base):
     
 
     def display(self):
+        """prints hash representatitons"""
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):

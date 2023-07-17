@@ -3,6 +3,8 @@
 unittest module for the base class
 """
 import unittest
+from io import StringIO
+from contextlib import redirect_stdout
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -249,6 +251,17 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(*(), **{})
 
+
+    def test_display(self):
+            r = Rectangle(4, 3, 2, 1)
+
+            expected_output = "    ####\n    ####\n    ####\n"
+
+            with StringIO() as buffer, redirect_stdout(buffer):
+                r.display()
+                actual_output = buffer.getvalue()
+
+            self.assertEqual(actual_output, expected_output)
 
 if __name__ == "__main__":
     unittest.main()
