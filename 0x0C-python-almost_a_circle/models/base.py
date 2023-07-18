@@ -74,7 +74,7 @@ class Base:
 
         if cls.__name__ == "Rectangle":
             r2 = Rectangle(3, 8)
-        elif cls.__name__ == "Square":
+        else:
             r2 = Square(5)
         r2.update(**dictionary)
         return r2
