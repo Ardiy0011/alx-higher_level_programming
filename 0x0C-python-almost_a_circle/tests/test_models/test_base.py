@@ -1,69 +1,78 @@
 #!/usr/bin/python3
-"""
-unittest module for the base class
-"""
-
-
+""" This module defines a test class for the Base class """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-    """ instaialisation of class"""
-    def setUp(self):
-        """
-        set up the test case by resetting the __nb_objects counter to 0
-        return:
-            nothing
-        """
-        Base.__nb_objects = 0
 
-    def test_default_id_assignment(self):
-        """
-        test the default id assignment when no custom_id is provided
-        """
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
+    def test_single_obj_with_id(self):
+        base = Base(10)
+        self.assertEqual(10, base.id)
 
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
+    def test_single_obj_without_id(self):
+        base = Base()
+        self.assertEqual(1, base.id)
 
-    def test_custom_id_assignment(self):
-        """
-        test the id assignment when a custom_id is provided
-        """
-        b4 = Base(12)
-        b5 = Base(40)
-        b6 = Base(99)
+    def test_two_obj_with_id(self):
+        base = Base(10)
+        base2 = Base(5)
+        self.assertEqual(5, base2.id)
 
-        self.assertEqual(b4.id, 12)
-        self.assertEqual(b5.id, 40)
-        self.assertEqual(b6.id, 99)
+    def test_two_obj_with_first_id(self):
+        base = Base(5)
+        base2 = Base()
+        self.assertEqual(2, base2.id)
 
-    def test_mixed_id_assignment(self):
-        """
-        Test the id assignment when a mixture of custom and default ids are used.
-        """
-        b7 = Base()
-        b8 = Base(50)
-        b9 = Base()
+    def test_two_obj_with_second_id(self):
+        base = Base()
+        base2 = Base(3)
+        self.assertEqual(3, base2.id)
 
-        self.assertEqual(b7.id, 5)
-        self.assertEqual(b8.id, 50)
-        self.assertEqual(b9.id, 6)
+    def test_two_obj_without_ids(self):
+        base = Base()
+        base2 = Base()
+        self.assertEqual(5, base2.id)
 
-    def test_id_increment_after_custom_id(self):
-        """
-        Test that the id counter increments correctly even after a custom id is assigned.
-        """
-        b10 = Base(100)
-        b11 = Base()
+    def test_single_obj_with_neg_id(self):
+        base = Base(-5)
+        self.assertEqual(-5, base.id)
 
-        self.assertEqual(b10.id, 100)
-        self.assertEqual(b11.id, 4)
+    def test_two_obj_with_neg_ids(self):
+        base = Base(-1)
+        base2 = Base(-2)
+        self.assertEqual(-2, base2.id)
 
+    def test_to_json_string_with_valid_dictionary(self):
+        rect = Rectangle(10, 7, 2, 8, 1)
+        dictionary = rect.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(sorted('[{"x": 2, "width": 10, "id": 1, "height": 7'
+                                ', "y": 8}]'), sorted(json_dictionary))
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_to_json_string_with_argument_none(self):
+        json_string = Base.to_json_string(None)
+        self.assertEqual("[]", json_string)
+
+    def test_to_json_string_with_empty_dictionary(self):
+        json_string = Base.to_json_string({})
+        self.assertEqual("[]", json_string)
+
+    def test_from_json_string_from_valid_string(self):
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        json_str = Rectangle.to_json_string(list_input)
+        output = Rectangle.from_json_string(json_str)
+        self.assertEqual(list_input, output)
+
+    def test_from_json_string_from_none(self):
+        output = Rectangle.from_json_string(None)
+        self.assertEqual([], output)
+
+    def test_from_json_string_from_empty(self):
+        output = Rectangle.from_json_string("")
+        self.assertEqual([], output)
