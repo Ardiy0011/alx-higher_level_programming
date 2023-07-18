@@ -140,6 +140,12 @@ class Rectangle(Base):
     def setter_validation(placeholder, value):
 
         if type(value) != int:
-            raise TypeError("width must be an integer")
+            raise TypeError(f"{placeholder} must be an integer")
+        if placeholder == "x" or placeholder == "y":
+            if value < 0:
+                raise ValueError(f"{placeholder} must be >= 0")
         if value <= 0:
-            raise ValueError("width must be > 0")
+            raise ValueError(f"{placeholder} must be > 0")
+
+
+
