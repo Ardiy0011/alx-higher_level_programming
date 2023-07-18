@@ -67,17 +67,18 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all the attributes already set"""
+        """Return a class instantied from a dictionary of attributes.
 
-        from models.rectangle import Rectangle
-        from models.square import Square
-
-        if cls.__name__ == "Rectangle":
-            r2 = Rectangle(3, 8)
-        else:
-            r2 = Square(5)
-        r2.update(**dictionary)
-        return r2
+        Args:
+            **dictionary (dict): Key/value pairs of attributes to initialize.
+        """
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
 
     @classmethod
     def load_from_file(cls):
