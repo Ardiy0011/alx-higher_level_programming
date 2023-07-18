@@ -33,7 +33,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns a json string rep of list of dictionaries"""
 
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -83,7 +83,7 @@ class Base:
         try:
             with open(file_name, encoding="UTF8") as fd:
                 content = cls.from_json_string(fd.read())
-        except IOError:
+        except OSError:
             return []
 
         insts = []
