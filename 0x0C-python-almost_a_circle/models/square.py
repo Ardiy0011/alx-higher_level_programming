@@ -21,7 +21,7 @@ class Square(Rectangle):
     @size.setter
     def size(self,value):
         """module Square size setter """
-        self.setter_validation("size", value)
+        self.external_validator("width", value)
 
         self.width = value
 
@@ -65,3 +65,5 @@ class Square(Rectangle):
                     'y': self.y}
 
         return dictionary
+
+

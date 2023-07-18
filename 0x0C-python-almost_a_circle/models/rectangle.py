@@ -143,3 +143,11 @@ class Rectangle(Base):
                     'width': self.width}
 
         return dictionary
+
+
+    @staticmethod
+    def external_validator(attribute, value):
+        if type(value) != int:
+            raise TypeError(f"{attribute} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{attribute} must be > 0")
