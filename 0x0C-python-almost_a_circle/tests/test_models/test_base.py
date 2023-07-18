@@ -76,3 +76,6 @@ class TestBase(unittest.TestCase):
     def test_from_json_string_from_empty(self):
         output = Rectangle.from_json_string("")
         self.assertEqual([], output)
+
+if __name__ == "__main__":
+    unittest.main()
