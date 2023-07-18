@@ -44,13 +44,15 @@ class Base:
 
         if json_string is None or len(json_string) == 0:
             return []
-        return json.loads(json_string)
+        jasonrep = json.loads(json_string)
+        return jasonrep
 
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of a list of objects to a file.
 
         Args:
+            cls: represents the Base class itself
             list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".json"
@@ -75,7 +77,7 @@ class Base:
         elif cls.__name__ == "Square":
             r2 = Square(5)
         r2.update(**dictionary)
-        return (r2)
+        return r2
 
     @classmethod
     def load_from_file(cls):
@@ -85,8 +87,8 @@ class Base:
         file_name = cls.__name__ + ".json"
 
         try:
-            with open(file_name, encoding="UTF8") as fd:
-                content = cls.from_json_string(fd.read())
+            with open(file_name, encoding="UTF8") as f:
+                content = cls.from_json_string(f.read())
         except OSError:
             return []
 
@@ -96,4 +98,4 @@ class Base:
             tmp = cls.create(**instance)
             insts.append(tmp)
 
-        return (insts)
+        return insts
