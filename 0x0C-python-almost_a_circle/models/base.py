@@ -33,7 +33,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns a json string rep of list of dictionaries"""
 
-        if list_dictionaries == None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -48,7 +48,7 @@ class Base:
 
     @staticmethod
     def save_to_file(cls, list_objs):
-        """Writes the string representation of objects of a class into a file"""
+        """Writes string repr of objects of a class into a file"""
         filename = cls.__name__ + ".json"
         lines = []
         if list_objs is not None:
@@ -61,9 +61,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        '''
-            Returns an instance with all the attributes already set
-        '''
+        """Returns an instance with all the attributes already set"""
+
         from models.rectangle import Rectangle
         from models.square import Square
 
@@ -84,7 +83,7 @@ class Base:
         try:
             with open(file_name, encoding="UTF8") as fd:
                 content = cls.from_json_string(fd.read())
-        except:
+        except IOError:
             return []
 
         insts = []
