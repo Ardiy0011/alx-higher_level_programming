@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Defines a Base class."""
+
+
 import json
 
 
@@ -47,3 +49,40 @@ class Base:
                 lines.append(obj_dict)
         with open(filename, mode="w") as f:
             json.dump(lines, f)
+
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''
+            Returns an instance with all the attributes already set
+        '''
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Rectangle":
+            r2 = Rectangle(3, 8)
+        elif cls.__name__ == "Square":
+            r2 = Square(5)
+        r2.update(**dictionary)
+        return (r2)
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+            loading dict representing the parameters
+        '''
+        file_name = cls.__name__ + ".json"
+
+        try:
+            with open(file_name, encoding="UTF8") as fd:
+                content = cls.from_json_string(fd.read())
+        except:
+            return []
+
+        insts = []
+
+        for instance in content:
+            tmp = cls.create(**instance)
+            insts.append(tmp)
+
+        return (insts)

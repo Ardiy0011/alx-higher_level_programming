@@ -17,13 +17,12 @@ class Square(Rectangle):
     def size(self):
         """asigning the value to width to size"""
         return self.width
-    
-    
+
     @size.setter
     def size(self,value):
         """module Square size setter """
         self.setter_validation("size", value)
-        
+
         self.width = value
 
     def __str__(self):
@@ -32,14 +31,13 @@ class Square(Rectangle):
         return (f"[Square] ({self.id}) {self.x}/{self.y} \
 - {self.size}")
 
-
     def update(self, *args, **kwargs):
         """assign non keyword argument to attribute via their indexes"""
 
         if len(args) == 0:
             for k, v in kwargs.items():
                 self.__setattr__(k, v)
-            return k
+            return
 
         try:
             if len(args) == 0:
@@ -56,8 +54,6 @@ class Square(Rectangle):
                 self.x = args[2]
             if len(args) >= 4:
                 self.y = args[3]
-
-
 
     def to_dictionary(self):
         """

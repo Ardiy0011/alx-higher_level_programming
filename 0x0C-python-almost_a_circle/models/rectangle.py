@@ -3,6 +3,8 @@
 
 
 from models.base import Base
+
+
 """Defines a Base class."""
 
 
@@ -44,14 +46,12 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
 
         self.setter_validation("x", value)
         self.__x = value
-
-
 
     @property
     def y(self):
@@ -67,7 +67,7 @@ class Rectangle(Base):
     def area(self):
         """returns the area of a rectangle"""
         return int(self.__width) * int(self.__height)
-    
+
 
     def display(self):
         """prints hash representatitons"""
@@ -91,7 +91,7 @@ class Rectangle(Base):
         if len(args) == 0:
             for k, v in kwargs.items():
                 self.__setattr__(k, v)
-            return k
+            return
 
         try:
             if len(args) == 0:
