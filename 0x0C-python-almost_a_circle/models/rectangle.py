@@ -148,6 +148,6 @@ class Rectangle(Base):
     @staticmethod
     def external_validator(attribute, value):
         if type(value) != int:
-            raise TypeError(f"{attribute} must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError(f"{attribute} must be > 0")
+            raise ValueError(f"width must be > 0")

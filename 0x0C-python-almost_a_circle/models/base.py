@@ -46,18 +46,22 @@ class Base:
             return []
         return json.loads(json_string)
 
-    @staticmethod
+    @classmethod
     def save_to_file(cls, list_objs):
-        """Writes string repr of objects of a class into a file"""
-        filename = cls.__name__ + ".json"
-        lines = []
-        if list_objs is not None:
-            for obj in list_objs:
-                obj_dict = obj.to_dictionary()
-                lines.append(obj_dict)
-        with open(filename, mode="w") as f:
-            json.dump(lines, f)
+        """Write the JSON serialization of a list of objects to a file.
 
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                list_dicts = []
+                for obj in list_objs:
+                    list_dicts.append(obj.to_dictionary())
+                f.write(Base.to_json_string(list_dicts))
 
     @classmethod
     def create(cls, **dictionary):
