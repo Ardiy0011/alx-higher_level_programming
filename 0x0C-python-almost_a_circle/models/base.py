@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-
 """Defines a base model class."""
 import json
 import csv
-import turtle
 
 
 class Base:
     """Base model.
-
     This Represents the "base" for all other classes in project 0x0C*.
 
     Private Class Attributes:
@@ -39,7 +36,6 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-
         """Returns a dict from a string"""
 
         if json_string is None or len(json_string) == 0:
@@ -50,11 +46,8 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of a list of objects to a file.
-
-        Args:
-            cls: represents the Base class itself
-            list_objs (list): A list of inherited Base instances.
         """
+
         filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
             if list_objs is None:
@@ -68,10 +61,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Return a class instantied from a dictionary of attributes.
-
-        Args:
-            **dictionary (dict): Key/value pairs of attributes to initialize.
         """
+
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
@@ -82,11 +73,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''
-            loading dict representing the parameters
-        '''
-        file_name = cls.__name__ + ".json"
+        """loading dict representing the parameters"""
 
+        file_name = cls.__name__ + ".json"
         try:
             with open(file_name, encoding="UTF8") as f:
                 content = cls.from_json_string(f.read())
@@ -107,10 +96,10 @@ class Base:
         file_name = cls.__name__ + ".csv"
 
         with open(file_name, mode="w", newline='', encoding="UTF8") as f:
-            scrib = csv.DictWriter(f, fieldnames=list_objs[0].to_dictionary().keys())
-            scrib.writeheader()
+            v = csv.DictWriter(f, fieldnames=list_objs[0].to_dictionary().keys())
+            v.writeheader()
             for obj in list_objs:
-                scrib.writerow(obj.to_dictionary())
+                v.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
