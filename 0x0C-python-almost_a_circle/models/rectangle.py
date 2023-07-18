@@ -131,5 +131,5 @@ class Rectangle(Base):
         if placeholder == "x" or placeholder == "y":
             if value < 0:
                 raise ValueError(f"{placeholder} must be >= 0")
-        elif value <= 0:
+        if value <= 0:
             raise ValueError(f"{placeholder} must be > 0")
