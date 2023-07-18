@@ -146,6 +146,8 @@ class Rectangle(Base):
                 raise ValueError(f"{placeholder} must be >= 0")
         if value <= 0:
             raise ValueError(f"{placeholder} must be > 0")
+        if len(value) == 0:
+            raise TypeError(f"{placeholder} must be an integer")
 
 
 
