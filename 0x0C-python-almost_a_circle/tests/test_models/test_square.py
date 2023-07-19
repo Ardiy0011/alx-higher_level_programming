@@ -7,6 +7,8 @@ import pep8
 from models.base import Base
 import json
 from models.rectangle import Rectangle
+
+
 """
 This module contains all unittest for Base class
 """
