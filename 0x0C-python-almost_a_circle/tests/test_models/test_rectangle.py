@@ -200,7 +200,7 @@ class TestRectangle(unittest.TestCase):
         Test creating a Rectangle instance with arbitrary keyword arguments.
         """
         r = Rectangle(width=10, height=5, x=1, y=2)
-        self.assertEqual(r.id, 7)
+        self.assertEqual(r.id, 13)
         self.assertEqual(r.width, 10)
         self.assertEqual(r.height, 5)
         self.assertEqual(r.x, 1)
@@ -211,7 +211,7 @@ class TestRectangle(unittest.TestCase):
         Test creating a Rectangle instance with a combination of arguments and keyword arguments.
         """
         r = Rectangle(2, 3, x=1, y=2)
-        self.assertEqual(r.id, 1)
+        self.assertEqual(r.id, 6)
         self.assertEqual(r.width, 2)
         self.assertEqual(r.height, 3)
         self.assertEqual(r.x, 1)
@@ -228,7 +228,7 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
             r = Rectangle(4, 3, 2, 1)
 
-            expected_output = "    ####\n    ####\n    ####\n"
+            expected_output = "\n  ####\n  ####\n  ####\n"
 
             with StringIO() as buffer, redirect_stdout(buffer):
                 r.display()

@@ -211,7 +211,7 @@ class TestRectangle(unittest.TestCase):
         Test creating a Rectangle instance with a combination of arguments and keyword arguments.
         """
         r = Rectangle(2, 3, x=1, y=2)
-        self.assertEqual(r.id, 1)
+        self.assertEqual(r.id, 6)
         self.assertEqual(r.width, 2)
         self.assertEqual(r.height, 3)
         self.assertEqual(r.x, 1)

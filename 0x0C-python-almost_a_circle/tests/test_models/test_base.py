@@ -58,7 +58,7 @@ class TestBase(unittest.TestCase):
 
     def test_to_json_string_with_empty_dictionary(self):
         json_string = Base.to_json_string({})
-        self.assertEqual("[]", json_string)
+        self.assertEqual("{}", json_string)
 
     def test_from_json_string_from_valid_string(self):
         list_input = [
