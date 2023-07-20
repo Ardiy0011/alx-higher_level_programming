@@ -8,24 +8,24 @@ class Rectangle(Base):
 
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new Rectangle.
+        """Initialization of a derived class named Rectangle.
 
         Args/constructors:
-            width : The width of the new Rectangle.
-            height : The height of the new Rectangle.
-            x : The x coordinate of the new Rectangle.
-            y : The y coordinate of the new Rectangle.
-            id : The identity of the new Rectangle.
+            width : The width of the class Rectangle.
+            height : The height of the class Rectangle.
+            x : The x coordinate of the class Rectangle.
+            y : The y coordinate of the classRectangle.
+            id : The identity of the class Rectangle.
         Raises:
             TypeError: If width or height is not an int.
             ValueError: If width or height <= 0.
             TypeError: If x or y is not an int.
             ValueError: If x or y < 0.
         """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
 
     @property
