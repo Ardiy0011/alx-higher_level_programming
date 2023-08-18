@@ -1,7 +1,12 @@
--- Lists all genres from the database hbtn_0d_tvshows
-COUNT(*) AS `number_of_shows`
-FROM `tv_genres` AS g
-    INNER JOIN `tv_show_genres` AS t
-    ON g.`id` = t.`genre_id`
-GROUP BY g.`name`
-ORDER BY `number_of_shows` DESC;
+-- Retrieves each genre with the
+-- no. of shows relating to each genre
+SELECT	tv_genres.name AS genre,
+	COUNT(*) AS number_of_shows
+FROM	tv_shows
+	LEFT OUTER JOIN tv_show_genres
+		ON tv_shows.id = tv_show_genres.show_id
+	LEFT OUTER JOIN tv_genres
+		ON tv_genres.id = tv_show_genres.genre_id
+WHERE	tv_show_genres.genre_id IS NOT NULL
+GROUP BY genre
+ORDER BY number_of_shows DESC;
