@@ -1,9 +1,5 @@
 #!/usr/bin/node
-
-function add (a, b) {
-    const aye = parseInt(a);
-    const bee = parseInt(b);
-    return aye + bee;
+exports.add = function (num1, num2) {
+    return (num1 + num2);
   };
-
-  module.exports = add;
+  
