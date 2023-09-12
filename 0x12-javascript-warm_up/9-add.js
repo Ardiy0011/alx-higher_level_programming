@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const { argv } = require('process')
+const { argv } = require('process');
 
-const first_phrase = parseFloat(argv[2])
-const second_phrase = parseFloat(argv[3])
+const first_phrase = parseFloat(argv[2]);
+const second_phrase = parseFloat(argv[3]);
 
 function add (a, b) {
   console.log(a + b);

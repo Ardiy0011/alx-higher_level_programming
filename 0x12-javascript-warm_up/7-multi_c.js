@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const { argv } = require('process')
-const x = argv[2]
+const { argv } = require('process');
+const x = argv[2];
 
-const myVar = 'C is fun'
+const myVar = 'C is fun';
 
 if (isNaN(x)) {
   console.log('Missing number of occurrences');
