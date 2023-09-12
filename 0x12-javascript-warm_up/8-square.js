@@ -11,5 +11,5 @@ for (let i = 1; i <= x; i++) {
   for (let j = 0; j < x; j++) {
     process.stdout.write('x')
   }
-  console.log()
+  console.log();
 }

@@ -15,5 +15,5 @@ function factorial (num) {
 if (isNaN(x)) {
   console.log('1')
 } else {
-  console.log(`${factorial(x)}`)
+  console.log(`${factorial(x)}`);
 }

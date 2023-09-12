@@ -23,5 +23,5 @@ if (argv.length <= 3) {
     }
   }
 
-  console.log(secondLargest)
+  console.log(secondLargest);
 }

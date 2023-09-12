@@ -6,5 +6,5 @@ function add (a, b) {
     return aye + bee
   }
   
-  module.exports = add
+  module.exports = add;
   

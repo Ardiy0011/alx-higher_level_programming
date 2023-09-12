@@ -5,5 +5,5 @@ const myVar = ['C is fun',
   'JavaScript is amazing']
 
 for (let i = 0; i < myVar.length; i++) {
-  console.log(myVar[i])
+  console.log(myVar[i]);
 }
