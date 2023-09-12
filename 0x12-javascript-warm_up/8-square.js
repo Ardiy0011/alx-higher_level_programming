@@ -5,11 +5,12 @@ const x = argv[2];
 
 if (isNaN(x)) {
   console.log('Missing size');
-}
+} else {
 
 for (let i = 1; i <= x; i++) {
   for (let j = 0; j < x; j++) {
     process.stdout.write('x');
   }
   console.log();
+}
 }
