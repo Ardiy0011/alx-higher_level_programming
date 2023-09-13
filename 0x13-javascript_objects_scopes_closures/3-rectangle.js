@@ -14,6 +14,6 @@ module.exports = class Rectangle {
           msg = msg + 'X';
         };
         console.log(msg);
-      };
     };
   };
+};
