@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-
-
-import MySQLdb
-import sys
-
 """
 a script that lists all cities with state
 id equal to states id
 """
+import MySQLdb
+import sys
+
+
 if __name__ == "__main__":
     param_args = sys.argv
 

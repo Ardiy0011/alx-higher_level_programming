@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-
-
+"""
+a script that lists all states
+with names like that argument passed
+"""
 import MySQLdb
 import sys
 
-'''
-a script that lists all states
-with names like that argument passed
-'''
+
 if __name__ == "__main__":
     param_args = sys.argv
 

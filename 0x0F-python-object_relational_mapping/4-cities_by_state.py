@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-
-
-import MySQLdb
-import sys
-
 """
 a script that lists all cities in the database
 """
+import MySQLdb
+import sys
+
+
 if __name__ == "__main__":
     param_args = sys.argv
 
