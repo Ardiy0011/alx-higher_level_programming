@@ -11,24 +11,31 @@ if __name__ == "__main__":
     param_args = sys.argv
 
     """connect to existing database"""
+    if len(sys.argv) != 4:
+        print("Invalid argument number")
+        sys.exit(1)
 
-    link = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=param_args[1],
-        password=param_args[2],
-        database=param_args[3])
+    try:
+        link = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=param_args[1],
+            password=param_args[2],
+            database=param_args[3])
 
-    """use the cursor to interact with the database"""
-    cursor = link.cursor()
+        """use the cursor to interact with the database"""
+        cursor = link.cursor()
 
-    """query the database for what you want in an order"""
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    states = cursor.fetchall()
-    for eachstate in states:
-        print(eachstate)
+        """query the database for what you want in an order"""
+        cursor.execute("SELECT * FROM states ORDER BY id ASC")
+        states = cursor.fetchall()
+        for eachstate in states:
+            print(eachstate)
 
-    """close the database and cursor"""
+    except MySQLdb.Error as error:
+        print("unable to connect to server")
 
-    cursor.close()
-    link.close()
+        """close the database and cursor"""
+    finally:
+        cursor.close()
+        link.close()
