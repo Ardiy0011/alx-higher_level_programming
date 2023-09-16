@@ -26,7 +26,10 @@ if __name__ == "__main__":
         cursor = link.cursor()
 
         """query database for what you want"""
-        cursor.execute("SELECT * FROM cities ORDER BY id ASC")
+        cursor.execute("""SELECT cities.id, cities.name, states.name
+        FROM cities
+        INNER JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id ASC""")
         states = cursor.fetchall()
         for eachstate in states:
             print(eachstate)
