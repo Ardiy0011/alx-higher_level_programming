@@ -27,7 +27,7 @@ if __name__ == "__main__":
         cursor = link.cursor()
 
         """query database for what you want"""
-        cursor.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC", (param_args[4],))
+        cursor.execute("SELECT * FROM states WHERE name LIKE '%s' ORDER BY id ASC", (param_args[4],))
         states = cursor.fetchall()
         for eachstate in states:
             print(eachstate)
