@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
         """query database for what you want"""
         cursor.execute(
-            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+            "SELECT * FROM states WHERE name LIKE binary 'N%' ORDER BY id ASC")
         states = cursor.fetchall()
         for eachstate in states:
             print(eachstate)
