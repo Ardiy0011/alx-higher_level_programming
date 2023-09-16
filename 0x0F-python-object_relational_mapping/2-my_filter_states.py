@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
         """query database for what you want"""
         cursor.execute(
-            "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
+            "SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY id ASC"
             .format(param_args[4]))
         states = cursor.fetchall()
         for eachstate in states:
