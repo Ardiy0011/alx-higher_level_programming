@@ -1,1 +1,1 @@
-task forf mysqldb and alchemy
+task for mysqldb and alchemy

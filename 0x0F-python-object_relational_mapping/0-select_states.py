@@ -1,21 +1,34 @@
 #!/usr/bin/python3
 
-
 import MySQLdb
-from sys import argv
+import sys
 
-'''
+"""
 a script that lists all states
 from the database
-'''
+"""
 if __name__ == "__main__":
-    con = MySQLdb.connect(
-        host="localhost", port=3306, user=argv[1],
-        password=argv[2], database=argv[3])
-    cursor = con.cursor()
+    param_args = sys.argv
+
+    """connect to existing database"""
+
+    link = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=param_args[1],
+        password=param_args[2],
+        database=param_args[3])
+
+    """use the cursor to interact with the database"""
+    cursor = link.cursor()
+
+    """query the database for what you want in an order"""
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    db = cursor.fetchall()
-    for i in db:
-        print(i)
+    states = cursor.fetchall()
+    for eachstate in states:
+        print(eachstate)
+
+    """close the database and cursor"""
+
     cursor.close()
-    db.close()
+    link.close()
