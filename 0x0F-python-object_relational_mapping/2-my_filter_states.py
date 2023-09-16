@@ -11,7 +11,7 @@ if __name__ == "__main__":
     param_args = sys.argv
 
     """connect to existing database"""
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("Invalid argument number")
         sys.exit(1)
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
         """query database for what you want"""
         cursor.execute(
-            "SELECT * FROM states WHERE name LIKE {} ORDER BY id ASC"
+            "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
             .format(param_args[4]))
         states = cursor.fetchall()
         for eachstate in states:
