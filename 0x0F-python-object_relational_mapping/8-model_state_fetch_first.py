@@ -31,14 +31,11 @@ if __name__ == "__main__":
 
     """Create a session"""
     Session = sessionmaker(bind=engine)
-    session = Session()
 
     """Retrieve and display 1st state object sorted by states.id"""
-    first_state = session.query(State).first()
-    if first_state:
-        print("{}: {}".format(first_state.id, first_state.name))
-    else:
-        print("Nothing")
-
-    """Close the session"""
-    session.close()
+    with Session() as session:
+            state = session.query(State).first()
+            if (state):
+                print(f"{state.id}: {state.name}")
+            else:
+                print("Nothing")
