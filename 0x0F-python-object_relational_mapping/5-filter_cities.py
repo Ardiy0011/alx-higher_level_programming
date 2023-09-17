@@ -40,10 +40,8 @@ if __name__ == "__main__":
         # Fetch all the results
         cities = cursor.fetchall()
 
-        if cities:
-            print(", ".join(city[0] for city in cities))
-        else:
-            print()
+        result = ", ".join("".join(eachcity) for eachcity in cities)
+        print(result)
 
     except MySQLdb.Error as error:
         print("MySQL Error:", error)
