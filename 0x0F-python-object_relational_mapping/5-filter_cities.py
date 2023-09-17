@@ -27,20 +27,29 @@ if __name__ == "__main__":
         cursor = link.cursor()
 
         """query database for what you want"""
+        # Execute the SQL query to retrieve cities of the given state
         cursor.execute(
             "SELECT cities.name "
             "FROM cities "
-            "INNER JOIN state ON cities.state_id = {}.id "
-            "ORDER BY id ASC"
-            .format(param_args[4]))
+            "INNER JOIN states ON cities.state_id = states.id "
+            "WHERE states.name = %s "
+            "ORDER BY cities.id ASC",
+            (param_args[4],)
+        )
 
-        states = cursor.fetchall()
-        for eachstate in states:
-            print(eachstate)
+        # Fetch all the results
+        cities = cursor.fetchall()
+
+        if cities:
+            print(", ".join(city[0] for city in cities))
+        else:
+            print()
 
     except MySQLdb.Error as error:
-        print("Could not connect to server")
+        print("MySQL Error:", error)
+        sys.exit(1)
 
-        """close database and cursor"""
+    finally:
+        # Close the cursor and the database connection
         cursor.close()
         link.close()
