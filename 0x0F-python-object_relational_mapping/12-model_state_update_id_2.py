@@ -34,7 +34,7 @@ if __name__ == "__main__":
     session = Session()
 
     """identify State object to update by id"""
-    updated_name = session.query(State).filter(State.id == 2).first()
+    updated_name = session.query(State).filter(State.id == 2)
 
     """Update the name of the State object"""
 
