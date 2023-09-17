@@ -1,41 +1,23 @@
 #!/usr/bin/python3
 """
-A script to connect to a MySQL database and list states.
+Fetch the first State from the given database
 """
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sys import argv
 from model_state import Base, State
-import sys
+
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, Session
 
 
-if __name__ == "__main__":
-    param_args = sys.argv
-    """Check for the correct number of command-line arguments"""
-    if len(param_args) != 4:
-        print("low no. of arguments")
-        sys.exit(1)
+if (__name__ == "__main__"):
+    engine = create_engine(f"mysql:///{argv[3]}",
+                           pool_pre_ping=True)
 
-    """Extract command-line arguments"""
+    Session = sessionmaker(engine)
 
-    u_name = param_args[1]
-    p_wd = param_args[2]
-    db = param_args[3]
-
-    """Create a database engine with proper URL formatting"""
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(u_name, p_wd, db), pool_pre_ping=True)
-
-    """Create tables if they don't exist"""
-    Base.metadata.create_all(engine)
-
-    """Create a session"""
-    Session = sessionmaker(bind=engine)
-
-    """Retrieve and display 1st state object sorted by states.id"""
     with Session() as session:
-            state = session.query(State).first()
-            if (state):
-                print(f"{state.id}: {state.name}")
-            else:
-                print("Nothing")
+        state = session.query(State).first()
+        if (state):
+            print(f"{state.id}: {state.name}")
+        else:
+            print("Nothing")
