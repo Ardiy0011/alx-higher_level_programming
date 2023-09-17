@@ -7,9 +7,9 @@ from sqlalchemy import Column, Integer, String
 Base = declarative_base()
 
 
-class User(Base):
+class State(Base):
     """derive class of base declarative"""
-    __tablename__ = 'users'
+    __tablename__ = 'states'
     id = Column(Integer, primary_key=True, unique=True,
                 autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
