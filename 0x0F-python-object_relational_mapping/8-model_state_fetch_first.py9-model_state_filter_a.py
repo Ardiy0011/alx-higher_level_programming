@@ -34,11 +34,12 @@ if __name__ == "__main__":
     session = Session()
 
     """Retrieve and display1st state object sorted by states.id"""
-    first_state = session.query(State).order_by(State.id).first()
-    if first_state:
-        print("{}: {}".format(first_state.id, first_state.name))
+    state = session.query(State).order_by(State.id).first()
+    if state:
+        print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
 
     """Close the session"""
     session.close()
+
