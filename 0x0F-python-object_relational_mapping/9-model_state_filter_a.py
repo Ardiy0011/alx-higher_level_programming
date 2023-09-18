@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     """Retrieve and display1st state object sorted by states.id"""
     first_state = session.query(
-        State).filter(State.name.like('%a%')).order_by(State.id).first()
+        State).filter(State.like('%a%')).order_by(State.id).first()
     if first_state:
         print("{}: {}".format(first_state.id, first_state.name))
     else:
