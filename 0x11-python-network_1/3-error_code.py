@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-""" 
+"""
 Script that takes a URL, sends a request to URL, and displays the body
 """
-
 if __name__ == "__main__":
     import sys
     from urllib import request, error

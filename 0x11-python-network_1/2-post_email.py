@@ -7,16 +7,20 @@ import urllib.request
 import urllib.parse
 import sys
 
+
 url = sys.argv[1]
 mail = sys.argv[2]
 
+
 def post_email(url, mail):
+    """function that posts plus mail"""
     data = {'email': mail}
     data = urllib.parse.urlencode(data).encode('utf-8')
     req = urllib.request.Request(url, data=data, method='POST')
-    
+
     with urllib.request.urlopen(req) as response:
         body = response.read().decode('utf-8')
         print(body)
+
 
 post_email(url, mail)
