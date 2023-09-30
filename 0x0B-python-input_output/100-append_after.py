@@ -4,19 +4,19 @@ function that readslines and writes to the next line  a anew string
 """
 
 
-def append_after(filename="", search_string="", new_string=""):
+def append_after(qname="", search_string="", new_string=""):
     """
     function that appends a new string unto a line after reading the
-    peruse in a UTF-8 text file.
+    peruse in a UTF-8 text q.
     """
 
-    with open(filename, 'r', encoding='UTF-8') as file:
-        peruse = file.readlines()
+    with open(qname, 'r', encoding='UTF-8') as q:
+        peruse = q.readlines()
 
     search_string = False
 
-    with open(filename, 'w', encoding='UTF-8') as file:
+    with open(qname, 'w', encoding='UTF-8') as q:
         for line in peruse:
-            file.write(line)
+            q.write(line)
             if '\n' in line and not search_string:
-                file.write(new_string)
+                q.write(new_string)
