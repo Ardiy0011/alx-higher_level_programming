@@ -1,14 +1,18 @@
-const request = require('request');
+const request = require('request')
 
-path = process.argv[1]
-const apiUrl = "https://swapi-api.alx-tools.com/api/films/:id";
+const path = process.argv[2]
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${path}`
 
 request(apiUrl, (err, res, datas) => {
-  if (id == path) {
-    //convert to javascriptobject using parse method
-    const data = JSON.parse(datas);
-    console.log(data);
+  if (err) {
+    console.log(err)
   } else {
-    console.error('Error:', err);
+    console.log(res.statusCode)
   }
-});
+  // convert to javascriptobject using parse method
+  const data = JSON.parse(datas)
+  const star_titles = data.title
+  if (path) {
+    console.log(star_titles)
+  }
+})
