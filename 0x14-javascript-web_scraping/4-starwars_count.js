@@ -2,7 +2,6 @@
 // script that counts chraters with name
 
 const request = require('request');
-
 const apiUrl = process.argv[2];
 
 request(apiUrl, (err, res, datas) => {

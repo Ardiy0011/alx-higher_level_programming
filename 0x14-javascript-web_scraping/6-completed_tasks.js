@@ -2,7 +2,6 @@
 // script that tabulates completed tasks
 
 const request = require('request')
-
 const apiUrl = 'https://jsonplaceholder.typicode.com/todos'
 
 request(apiUrl, (err, res, data) => {
