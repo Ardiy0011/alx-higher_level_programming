@@ -1,13 +1,14 @@
 #!/usr/bin/node
+// script that prints response status code
 
-const request = require('request')
+const request = require('request');
 
-const url = process.argv[2]
+const url = process.argv[2];
 
 request(url, (err, res) => {
   if (err) {
-    console.error(err)
+    console.error(err);
   } else {
     console.log(`code: ${res.statusCode}`)
   }
-})
+});

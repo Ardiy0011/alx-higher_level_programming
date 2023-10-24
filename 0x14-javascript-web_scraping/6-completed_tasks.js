@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// script that tabulates completed tasks
 
 const request = require('request')
 
