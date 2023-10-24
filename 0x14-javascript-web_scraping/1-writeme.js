@@ -1,3 +1,5 @@
+#!/usr/bin/nodec
+
 const fs = require('fs')
 
 const path = process.argv[2]
